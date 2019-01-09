@@ -52,7 +52,7 @@ namespace helpers {
         explicit operator PtrToPtrToMemType() noexcept { return &m_ptr; }
 
         // returns raw pointer to raw pointer to ComType
-        PtrToPtrToMemType pptr() noexcept { return &m_ptr; }
+        PtrToPtrToMemType p_ptr() noexcept { return &m_ptr; }
 
         void SafeRelease() noexcept {
             if (m_ptr) {

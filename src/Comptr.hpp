@@ -72,10 +72,10 @@ namespace helpers {
         explicit operator PtrToPtrToComType() noexcept { return &m_ptr; }
 
         // returns raw pointer to raw pointer to ComType
-        PtrToPtrToComType pptr() noexcept { return &m_ptr; }
+        PtrToPtrToComType p_ptr() noexcept { return &m_ptr; }
 
         // returns raw pointer to raw pointer to ComType, casted to void**
-        void** void_pptr() noexcept { return reinterpret_cast<void**>(pptr()); }
+        void** void_pptr() noexcept { return reinterpret_cast<void**>(p_ptr()); }
 
         void AddRef() noexcept {
             if (m_ptr) {
