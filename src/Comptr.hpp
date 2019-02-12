@@ -3,18 +3,24 @@
 
 namespace helpers {
 
+    // RAII wrapper over COM pointer
     template<typename T>
     class Comptr final {
     public:
+        // Type of the COM object.
         using ComType = T;
 
+        // Initializes internal pointer to COM object with nullptr.
+        constexpr Comptr() noexcept : m_ptr(nullptr) {}
+
+        // Initializes internal poiner to COM object with passed ptr.
+        // AddRef of IUnknown is NOT called.
         explicit constexpr Comptr(T* ptr = nullptr) noexcept : m_ptr(ptr) {}
 
+        // Safely releases the COM object
         ~Comptr() noexcept {
             SafeRelease();
         }
-
-        // copying
 
         Comptr(const Comptr<T>& other) noexcept {
             other.AddRef();
@@ -60,6 +66,7 @@ namespace helpers {
             return *this;
         }
 
+        // Returns pointer to the underlying COM object
         T* operator->() const noexcept { return m_ptr; }
 
         using PtrToComType = T*;
