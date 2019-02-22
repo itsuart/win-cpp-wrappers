@@ -1,5 +1,5 @@
-#ifndef HELPERS_ERRORMESSAGE_HPP
-#define HELPERS_ERRORMESSAGE_HPP
+#ifndef HELPERS_ERRORMESSAGE_H
+#define HELPERS_ERRORMESSAGE_H
 
 #include <memory>
 #include <Windows.h>

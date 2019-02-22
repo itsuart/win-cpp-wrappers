@@ -1,5 +1,5 @@
-#ifndef HELPERS_FILE_UTILS_HPP
-#define HELPERS_FILE_UTILS_HPP
+#ifndef HELPERS_FILE_UTILS_H
+#define HELPERS_FILE_UTILS_H
 
 #include <cstdint>
 

@@ -1,4 +1,4 @@
-#include "ErrorMessage.hpp"
+#include "ErrorMessage.h"
 
 namespace helpers {
     std::unique_ptr<char, decltype(LocalFree)*> get_error_message_a(DWORD errorCode) noexcept {

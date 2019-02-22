@@ -1,5 +1,5 @@
-#ifndef HELPERS_COMPTR_HPP
-#define HELPERS_COMPTR_HPP
+#ifndef HELPERS_COMPTR_H
+#define HELPERS_COMPTR_H
 
 namespace helpers {
 

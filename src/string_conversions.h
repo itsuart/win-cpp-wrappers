@@ -1,5 +1,5 @@
-#ifndef HELPERS_STRING_CONVERSIONS_HPP
-#define HELPERS_STRING_CONVERSIONS_HPP
+#ifndef HELPERS_STRING_CONVERSIONS_H
+#define HELPERS_STRING_CONVERSIONS_H
 
 #include <memory>
 #include <type_traits>
