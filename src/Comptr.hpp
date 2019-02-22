@@ -15,7 +15,7 @@ namespace helpers {
 
         // Initializes internal poiner to COM object with passed ptr.
         // AddRef of IUnknown is NOT called.
-        explicit constexpr Comptr(T* ptr = nullptr) noexcept : m_ptr(ptr) {}
+        explicit constexpr Comptr(T* ptr) noexcept : m_ptr(ptr) {}
 
         // Safely releases the COM object
         ~Comptr() noexcept {
