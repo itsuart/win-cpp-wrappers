@@ -29,7 +29,7 @@ namespace helpers {
 
         operator WrappedType() const;
 
-        WrappedType Unwrap() const;
+        WrappedType unwrap() const;
 
         // Force release the resource
         void Release();

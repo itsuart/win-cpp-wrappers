@@ -49,7 +49,7 @@ namespace helpers {
         return m_resource;
     }
 
-    Handle::WrappedType Handle::Unwrap() const {
+    Handle::WrappedType Handle::unwrap() const {
         return m_resource;
     }
 
