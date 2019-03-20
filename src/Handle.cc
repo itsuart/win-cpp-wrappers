@@ -25,14 +25,17 @@ namespace helpers {
     Handle::Handle(Handle&& other)
     : m_resource(other.m_resource)
     {
-        other.Release();
+        other.m_resource = s_invalidValue;
     }
 
     Handle& Handle::operator=(Handle&& other){
-        if (&other == this) return *this;
-        Release();
-        m_resource = other.m_resource;
-        other.Release();
+        if (&other != this){
+            Release();
+            m_resource = other.m_resource;
+            other.m_resource = s_invalidValue;
+        }
+
+        return *this;
     }
 
     // returns true iff wrapped resource is valid

@@ -25,14 +25,17 @@ namespace helpers {
     AutoUnmappedViewOfFile::AutoUnmappedViewOfFile(AutoUnmappedViewOfFile&& other)
     : m_resource(other.m_resource)
     {
-        other.Release();
+        other.m_resource = s_invalidValue;
     }
 
     AutoUnmappedViewOfFile& AutoUnmappedViewOfFile::operator=(AutoUnmappedViewOfFile&& other){
-        if (&other == this) return *this;
-        Release();
-        m_resource = other.m_resource;
-        other.Release();
+        if (&other != this){
+            Release();
+            m_resource = other.m_resource;
+            other.m_resource = s_invalidValue;
+        }
+
+        return *this;
     }
 
     // returns true iff wrapped resource is valid
